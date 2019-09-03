@@ -1,14 +1,14 @@
-# Update
 
-In light of the update to the library used in this repo (HuggingFace updated the `pytorch-pretrained-bert` library to [pytorch-transformers](https://github.com/huggingface/pytorch-transformers)), I have written a new [guide](https://medium.com/@chaturangarajapakshe/https-medium-com-chaturangarajapakshe-text-classification-with-transformer-models-d370944b50ca) as well as a new [repo](https://github.com/ThilinaRajapakse/pytorch-transformers-classification). If you are starting out, I recommend using those instead as the code has been cleaned up both on my end and in the Pytorch-Transformers library, greatly streamlining the whole process. The new repo also supports XLNet, XLM, and RoBERTa models, in addition to BERT, as of September 2019.
+# File Descriptions
+BERT preparing data and training - Preprocesses the data so that it is suitable to run through the BERT model. Also, splits dataset into training and testing data and uses training data to fine-tune a downloaded BERT model (bert-base-cased).
+
+BERT testing - Uses testing data to assess how accurate the fine-tuned model. Prints out the number of TPs, TNs, FPs, and FNs.
+
+Logistic Regression - Uses a vectorizer to convert text to vectors, and then runs logistic regression on the dataset. Results were compared to those that came from the BERT codes.
+
+Cosine Similarity Testing - Uses data to train a logistic regression model. Then testing data is run through model, and false positives are extracted. Then cosine similarity is used to determine the most similar texts to each of the false positives. This is useful, as measures can more easily be taken to adjust the training data to prevent false positives.
 
 # Binary Text Classification with BERT
 Accompanying code for the Medium article found at https://medium.com/@chaturangarajapakshe/a-simple-guide-on-using-bert-for-text-classification-bbf041ac8d04.
 
-## Important!
-
-This repository was not meant to be a standalone guide to using BERT. It was originally created to accompany the article above.  
-If you are using this repo to set up BERT and you run into any issues, I highly recommend that you go through the article as it explains things in more detail.  
-Even if you don't run into problems, the article should give a better picture of how I did things, and why I chose to do it that way. Gaining that perspective may help you to adapt this code to your project in a more suitable and/or efficient manner.
-
-Happy coding!
+The code in this repository is based on the code from ThilinaRajapakse's repository called BERT_binary_text_classification. It was modified a bit in order to suit my own needs.
